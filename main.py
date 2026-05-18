@@ -2,6 +2,10 @@ from services.mapas import Mapas
 def main():
     mapas = Mapas()
     endereco = input("Digite um endereço: ")
+    while not endereco.strip():
+        print("Endereço não pode ser vazio.")
+        endereco = input("Digite um endereço: ")
+        
     resultado = mapas.geocode(endereco)
 
     if resultado:
