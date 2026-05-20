@@ -26,8 +26,10 @@ API simples em Python que converte endereços em coordenadas geográficas (latit
 
 ```text
 api_mapa/
+├── app/
+├── services/
+│   └── mapas.py
 │
 ├── main.py
-├── mapas.py
 ├── requirements.txt
 └── README.md
