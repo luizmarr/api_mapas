@@ -1,22 +1,29 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Form, Request
 from services.mapas import Mapas
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI(
     title="API de Geocodificação",
     description="Uma API para geocodificação de endereços usando a biblioteca geopy.",
 )
-
+templates = Jinja2Templates(directory="templates")
 mapas = Mapas()
 
-@app.get("/geocode")
-def geocode(endereco: str):
+@app.get("/")
+def home(request: Request):
 
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html"
+    )
+
+@app.post("/geocode")
+def geocode(endereco: str = Form(...)):
     resultado = mapas.geocode(endereco)
-
-    if not resultado:
-        return {"erro": "Endereço não encontrado"}
-
-    return resultado
+    if resultado:
+        return resultado
+    else:
+        return {"error": "Endereço não encontrado"}
 
 def main():
     import uvicorn
