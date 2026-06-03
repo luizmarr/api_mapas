@@ -18,10 +18,14 @@ def home(request: Request):
     )
 
 @app.post("/geocode")
-def geocode(endereco: str = Form(...)):
+def geocode(request: Request, endereco: str = Form(...)):
     resultado = mapas.geocode(endereco)
     if resultado:
-        return resultado
+        return templates.TemplateResponse(
+    request=request,
+    name="resultado.html",
+    context={"resultado": resultado}
+)
     else:
         return {"error": "Endereço não encontrado"}
 
