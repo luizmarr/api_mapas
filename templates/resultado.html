@@ -2,6 +2,9 @@
 <html lang="pt-br">
 
 <head>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,6 +15,8 @@
 
     <title>Resultado da Geocodificação</title>
 </head>
+
+
 
 <body>
 
@@ -24,11 +29,30 @@
 
         <p><strong>Longitude:</strong> {{ resultado.longitude }}</p>
 
+        <div id="map"></div>
+        
+
         <p><strong>País:</strong> {{ resultado.pais }}</p>
 
         <a href="/" class="btn-voltar">Nova Pesquisa</a>
     </div>
 
 </body>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    const latitude = {{ resultado.latitude }};
+    const longitude = {{ resultado.longitude }};
+
+    console.log(latitude);
+    console.log(longitude);
+
+    const map = L.map('map').setView([latitude, longitude], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+}).addTo(map);
+</script>
 
 </html>
