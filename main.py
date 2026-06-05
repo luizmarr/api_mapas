@@ -1,11 +1,13 @@
 from fastapi import FastAPI, Form, Request
 from services.mapas import Mapas
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(
     title="API de Geocodificação",
     description="Uma API para geocodificação de endereços usando a biblioteca geopy.",
 )
+app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 mapas = Mapas()
 
