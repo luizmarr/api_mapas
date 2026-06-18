@@ -18,7 +18,8 @@ class Mapas:
                 "endereco": location.address,
                 "latitude": location.latitude,
                 "longitude": location.longitude,
-                "pais": pais
+                "pais": pais,
+                "cep": reverse_location.raw.get("address", {}).get("postcode")
             }
         else:
             return None 

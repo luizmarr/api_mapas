@@ -25,6 +25,8 @@
 
         <p><strong>Endereço:</strong> {{ resultado.endereco }}</p>
 
+        <p><strong>CEP:</strong> {{ resultado.cep }}</p>
+
         <p><strong>Latitude:</strong> {{ resultado.latitude }}</p>
 
         <p><strong>Longitude:</strong> {{ resultado.longitude }}</p>
@@ -42,8 +44,8 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-    const latitude = {{ resultado.latitude }};
-    const longitude = {{ resultado.longitude }};
+    const latitude = '{{ resultado.latitude }}';
+    const longitude = '{{ resultado.longitude }}';
 
     console.log(latitude);
     console.log(longitude);
