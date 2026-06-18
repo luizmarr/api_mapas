@@ -23,6 +23,8 @@
     <div class="resultado">
         <h2>Resultado da Busca</h2>
 
+        <p><strong>País:</strong> {{ resultado.pais }}</p>
+
         <p><strong>Endereço:</strong> {{ resultado.endereco }}</p>
 
         <p><strong>CEP:</strong> {{ resultado.cep }}</p>
@@ -32,9 +34,6 @@
         <p><strong>Longitude:</strong> {{ resultado.longitude }}</p>
 
         <div id="map"></div>
-        
-
-        <p><strong>País:</strong> {{ resultado.pais }}</p>
 
         <a href="/" class="btn-voltar">Nova Pesquisa</a>
     </div>
