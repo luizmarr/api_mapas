@@ -4,21 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="/static/style.css">
-<title>GeoMap Explorer</title>
+
+    <title>GeoMap Explorer</title>
 </head>
+
 <body>
-<div class="card">
-    <h1>🌍GeoMap Explorer</h1>
-    <p><strong>Encontre a localização de qualquer endereço</strong></p>
-    <form method="post" action="/geocode">
-        <div class="form-group">
-            <label for="endereco">Digite um endereço:</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" required>
+
+    <header class="navbar">
+        <div class="navbar-content">
+
+            <a href="/" class="brand">
+                <span class="brand-icon">🌍</span>
+                <span>GeoMap</span>
+            </a>
+
+            <span class="brand-status">
+                ● API Online
+            </span>
+
         </div>
-        <button type="submit" class="btn btn-primary">Geocodificar</button>
-    </form>
-</div>
+    </header>
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span>✦</span>
+                Geolocalização inteligente
+            </div>
+
+            <h1>
+                Encontre qualquer lugar
+                <span>do mundo.</span>
+            </h1>
+
+            <p class="hero-description">
+                Pesquise um endereço e descubra sua localização
+                exata através de coordenadas geográficas.
+            </p>
+
+            <form method="post" action="/geocode" class="search-box">
+
+                <div class="search-input">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        placeholder="Digite um endereço, cidade ou CEP..."
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit">
+                    Encontrar localização
+                    <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="search-example">
+                Exemplo: Avenida Paulista, São Paulo
+            </p>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="map-preview">
+
+                <div class="map-grid"></div>
+
+                <div class="map-route"></div>
+
+                <div class="map-marker">
+                    <div class="marker-pulse"></div>
+                    <span>●</span>
+                </div>
+
+                <div class="map-card">
+                    <strong>Localização encontrada</strong>
+                    <span>São Paulo, Brasil</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <section class="features-section">
+
+        <div class="feature-item">
+            <span class="feature-icon">📍</span>
+
+            <div>
+                <strong>Localização precisa</strong>
+                <p>Coordenadas geográficas precisas.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-icon">🗺️</span>
+
+            <div>
+                <strong>Mapa interativo</strong>
+                <p>Visualize o local diretamente no mapa.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <span class="feature-icon">⚡</span>
+
+            <div>
+                <strong>Resposta rápida</strong>
+                <p>Resultados em poucos segundos.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <span>GeoMap Explorer</span>
+        <span>API de Geocodificação</span>
+    </footer>
+
 </body>
+
 </html>

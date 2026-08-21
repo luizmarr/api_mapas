@@ -49,11 +49,19 @@
     console.log(latitude);
     console.log(longitude);
 
-    const map = L.map('map').setView([latitude, longitude], 13);
+    const map = L.map('map').setView([latitude, longitude], 15);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    maxZoom: 20
 }).addTo(map);
+
+const marcador = L.marker([latitude, longitude]).addTo(map);
+
+marcador.bindPopup(`
+    <strong>📍 Localização encontrada</strong><br>
+    {{ resultado.endereco }}
+`).openPopup();
 </script>
 
 </html>
