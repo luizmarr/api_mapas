@@ -1,161 +1,174 @@
-# 🌍 GeoMap Explorer
+# 🌎 GeoMap Explorer
 
-Uma aplicação web desenvolvida com **Python** e **FastAPI** que converte endereços em coordenadas geográficas (latitude e longitude) utilizando o serviço **Nominatim (OpenStreetMap)** através da biblioteca **Geopy**.
+Aplicação web desenvolvida em **Python** utilizando **FastAPI** para realizar geocodificação de endereços e apresentar a localização encontrada em um mapa.
 
-O projeto conta com uma interface web intuitiva, permitindo que o usuário realize pesquisas de endereços diretamente pelo navegador e visualize os resultados de forma organizada.
+O projeto foi desenvolvido como forma de prática em desenvolvimento web, criação de APIs e integração com serviços de geolocalização.
 
----
+## 🚀 Tecnologias
 
-## 🚀 Funcionalidades
+* 🐍 Python
+* ⚡ FastAPI
+* 🗺️ Geopy
+* 🌐 HTML5
+* 🎨 CSS3
+* 📄 Jinja2
+* 🖥️ Uvicorn
 
-* 🔍 Pesquisa de endereços
-* 📍 Conversão de endereços em coordenadas geográficas
-* 🌎 Exibição do país encontrado
-* 📄 Página de resultado renderizada com Jinja2
-* 🎨 Interface estilizada com HTML e CSS
-* ⚠️ Tratamento de erros para endereços inválidos
-* 🏗️ Estrutura organizada seguindo boas práticas
+## 📌 Funcionalidades
 
----
+* 🔎 Pesquisa de endereços
+* 📍 Geocodificação de endereços
+* 🌎 Conversão de endereços em coordenadas geográficas
+* 🗺️ Exibição da localização em um mapa
+* 📌 Marcador para a localização encontrada
+* ⚠️ Tratamento de endereço não encontrado
+* 📚 Documentação automática da API com FastAPI
 
-## 📸 Demonstração
+## 🖥️ Funcionamento
 
-### Página Inicial
-![Página Inicial](imagens/pagina_inicial.png)
+O usuário informa um endereço através da interface da aplicação.
 
-### Página de Resultado
+A aplicação envia o endereço para o sistema de geocodificação, que realiza a busca e retorna as informações da localização.
 
-![Resultado da Busca](imagens/resultado_busca.png)
----
+Quando o endereço é encontrado, a aplicação apresenta os dados e sua localização no mapa.
 
-## 🛠️ Tecnologias Utilizadas
+### Exemplo
 
-### Backend
+```text
+Endereço informado:
+Avenida Paulista, São Paulo
 
-* Python 3
-* FastAPI
-* Uvicorn
+Resultado:
+Latitude: -23.561684
+Longitude: -46.655981
+```
 
-### Geocodificação
-
-* Geopy
-* Nominatim (OpenStreetMap)
-
-### Frontend
-
-* HTML5
-* CSS3
-* Bootstrap
-* Jinja2 Templates
-
-### Controle de Versão
-
-* Git
-* GitHub
-
----
-
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do projeto
 
 ```text
 api_mapas/
 │
-├── app/
-│   └── services/
-│       └── mapas.py
+├── services/
 │
 ├── static/
-│   └── style.css
 │
 ├── templates/
-│   ├── index.html
-│   └── resultado.html
 │
-├── .gitignore
 ├── main.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
----
+### 📁 Principais diretórios
 
-## ▶️ Como Executar o Projeto
+**`services/`**
 
-### 1. Clonar o repositório
+Contém os serviços utilizados pela aplicação.
+
+**`static/`**
+
+Contém os arquivos estáticos utilizados pela interface, como arquivos CSS.
+
+**`templates/`**
+
+Contém os templates HTML utilizados pela aplicação.
+
+**`main.py`**
+
+Arquivo principal responsável pela inicialização da aplicação FastAPI e definição das rotas.
+
+**`requirements.txt`**
+
+Contém as dependências necessárias para executar o projeto.
+
+## ⚙️ Instalação
+
+### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/luizmarr/estudos.git
+git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
 ```
 
-### 2. Entrar na pasta do projeto
+### 2. Entre na pasta do projeto
 
 ```bash
 cd api_mapas
 ```
 
-### 3. Criar ambiente virtual
+### 3. Crie um ambiente virtual
 
 ```bash
 python -m venv .venv
 ```
 
-### 4. Ativar ambiente virtual
+### 4. Ative o ambiente virtual
 
-Windows:
+No Windows PowerShell:
 
-```bash
-.venv\Scripts\activate
+```powershell
+.venv\Scripts\Activate.ps1
 ```
 
-Linux/macOS:
-
-```bash
-source .venv/bin/activate
-```
-
-### 5. Instalar dependências
+### 5. Instale as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Executar aplicação
+## ▶️ Executando o projeto
 
-```bash
-python main.py
-```
-
-ou
+Com o ambiente virtual ativado, execute:
 
 ```bash
 uvicorn main:app --reload
 ```
 
----
+Depois, acesse:
 
-## 📚 Aprendizados
+```text
+http://127.0.0.1:8000
+```
 
-Durante o desenvolvimento deste projeto foram praticados conceitos importantes de desenvolvimento web:
+## 📚 Documentação da API
 
-* Criação de APIs com FastAPI
-* Rotas GET e POST
-* Manipulação de formulários HTML
-* Templates com Jinja2
-* Estilização com CSS
-* Organização de projetos Python
-* Integração com serviços de geolocalização
-* Controle de versão com Git e GitHub
+O FastAPI disponibiliza uma documentação interativa automaticamente.
 
----
+### Swagger UI
 
-## 🔮 Melhorias Futuras
+```text
+http://127.0.0.1:8000/docs
+```
 
-* 🗺️ Exibir mapa interativo com a localização encontrada
-* 📱 Melhorar a responsividade para dispositivos móveis
-* 🌙 Implementar tema escuro
+### ReDoc
 
----
+```text
+http://127.0.0.1:8000/redoc
+```
+
+## 🚀 Próximas melhorias
+
+* [ ] Implementar busca por localização diretamente no mapa
+* [ ] Adicionar histórico de pesquisas
+* [ ] Melhorar a experiência em dispositivos móveis
+* [ ] Adicionar mais validações para endereços
+* [ ] Implementar testes automatizados
+* [ ] Melhorar o tratamento de erros
+* [ ] Adicionar novos recursos de geolocalização
+* [ ] Melhorar a organização e arquitetura do projeto
+
+## 🎯 Objetivo
+
+O **GeoMap Explorer** foi desenvolvido com o objetivo de colocar em prática conhecimentos de **Python, FastAPI, desenvolvimento web, APIs e geolocalização**.
+
+O projeto também representa parte da minha evolução prática no desenvolvimento de software.
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Luiz Henrique Marreira de Souza** como projeto de estudos em Python, FastAPI e desenvolvimento web.
+**Luiz Henrique**
+
+Estudante de **Análise e Desenvolvimento de Sistemas (ADS)**.
+
+---
+
+⭐ Se você gostou do projeto, considere deixar uma estrela no repositório.
